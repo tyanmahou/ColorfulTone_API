@@ -16,9 +16,12 @@ $paths = [
     'Connection' => './app/utils/Connection.php',
     'Database' => './app/utils/Database.php',
     'DateTimeUtil' => './app/utils/DateTimeUtil.php',
+    'Log' => './app/utils/Log.php',
+    'Request' => './app/utils/Request.php',
 
     // exception
     'AppException' => './app/exceptions/AppException.php',
+    'RequestException' => './app/exceptions/RequestException.php',
 
     // views
     'ResponseView' => './app/views/ResponseView.php'
