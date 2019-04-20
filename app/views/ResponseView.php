@@ -12,17 +12,17 @@ class ResponseView
      * @param callable $action
      * @return array
      */
-    private function handleResponse(callable $action) : array
+    private function handleResponse(callable $action): array
     {
         try {
             $response = [
                 'status' => 'success',
-                'value' => $action()
+                'result' => $action()
             ];
         } catch (\Exception $ex) {
             $response = [
                 'status' => 'failed',
-                'value' => [
+                'result' => [
                     'message' => $ex->getMessage(),
                     'code' => $ex->getCode(),
                 ],
@@ -30,7 +30,7 @@ class ResponseView
         }
         return $response;
     }
-    public function render(callable $action) : void
+    public function render(callable $action): void
     {
         ob_start();
         $response = $this->handleResponse($action);

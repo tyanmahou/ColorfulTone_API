@@ -4,14 +4,14 @@ namespace ct_api;
 
 class Request
 {
-    static public function getBody(array $requires = []) : array
+    static public function getBody(array $requires = []): array
     {
         $body = json_decode(file_get_contents('php://input'), true);
         foreach ($requires as $value) {
-            if (!isset($body['values'][$value])) {
+            if (!isset($body['params'][$value])) {
                 throw new RequestException("request requires {$value}");
             }
         }
-        return $body['values'] ?? [];
+        return $body['params'] ?? [];
     }
 }
