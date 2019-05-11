@@ -36,7 +36,7 @@ class ResponseView
         $response = $this->handleResponse($action);
         ob_end_clean();
 
-        $json = json_encode($response);
+        $json = json_encode($response, JSON_UNESCAPED_UNICODE);
 
         header(self::HEADER_JSON);
         echo $json;
