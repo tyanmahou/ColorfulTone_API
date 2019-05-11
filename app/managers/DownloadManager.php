@@ -29,7 +29,7 @@ class DownloadManager
         $result = [];
         foreach ($downloads as $content) {
             $result[] = [
-                'download_id' => $content['download_id'],
+                'download_id' => (int)$content['download_id'],
                 'download_url' => $content['download_url'],
                 'save_local_pass' => $content['save_local_pass'],
             ];
