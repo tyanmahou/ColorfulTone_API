@@ -5,7 +5,7 @@ class DownloadController
 {
     static public function listAction(): array
     {
-        $response = DownloadManager::getDownloads();
+        $response = DownloadManager::getList();
         return $response;
     }
 }
