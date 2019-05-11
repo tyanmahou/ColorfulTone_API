@@ -3,14 +3,17 @@
 $paths = [
     // Controller
     'BaseController' => './app/controllers/BaseController.php',
+    'DownloadController' => './app/controllers/DownloadController.php',
     'TitleController' => './app/controllers/TitleController.php',
 
     // Manager
+    'DownloadManager' => './app/managers/DownloadManager.php',
     'VersionManager' => './app/managers/VersionManager.php',
 
     // Service
+    'DownloadService' => './app/services/DownloadService.php',
     'VersionService' => './app/services/VersionService.php',
-    
+
     // Util
     'Constants' => './app/utils/Constants.php',
     'Connection' => './app/utils/Connection.php',
