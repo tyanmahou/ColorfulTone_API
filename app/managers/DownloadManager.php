@@ -28,11 +28,11 @@ class DownloadManager
         });
         $result = [];
         foreach ($downloads as $content) {
-            $result[] = [
-                'download_id' => (int)$content['download_id'],
-                'download_url' => $content['download_url'],
-                'save_local_pass' => $content['save_local_pass'],
-            ];
+            $content['download_id'] = (int)$content['download_id'];
+            unset($content['start_date']);
+            unset($content['end_date']);
+
+            $result[] = $content;
         }
         return $result;
     }
