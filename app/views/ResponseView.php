@@ -36,8 +36,9 @@ class ResponseView
         $response = $this->handleResponse($action);
         ob_end_clean();
 
-        $json = json_encode($response, JSON_UNESCAPED_UNICODE);
-
+        $json = json_encode($response, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        // アプリ側で置換がないのでこちらで置換しておく
+        $json = str_replace('\\\\', '\\', $json);
         header(self::HEADER_JSON);
         echo $json;
     }
