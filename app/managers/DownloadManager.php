@@ -24,7 +24,8 @@ class DownloadManager
         );
         // 複数ある場合は最新のものを優先
         usort($downloads, function ($a, $b) {
-            return $a['download_id'] <=> $b['download_id'];
+            return $a['order'] <=> $b['order'] ?:
+            $a['download_id'] <=> $b['download_id'];
         });
         $result = [];
         foreach ($downloads as $content) {
