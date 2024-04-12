@@ -5,7 +5,9 @@ class DownloadController
 {
     static public function listAction(): array
     {
-        $response = DownloadManager::getList();
+        $body = Request::getBody();
+        $version = $body['version'] ?? '0.0.0.0';
+        $response = DownloadManager::getList($version);
         return $response;
     }
 }
