@@ -24,7 +24,7 @@ class DownloadManager
         );
         // バージョン比較
         $downloads = array_filter($downloads, function ($item) use ($version) {
-            return version_compare($item['version'], $version) >= 0;
+            return version_compare($version, $item['version']) >= 0;
         });        
         // 複数ある場合は最新のものを優先
         usort($downloads, function ($a, $b) {
